@@ -1,19 +1,21 @@
-import React from 'react';
+import React from 'react'
 
-const R = require('ramda');
+const R = require('ramda')
+let n = 3 //number of stars
 
-let star = <span style={{ cursor: "pointer"}}  onClick={ChangeColor}>
-    {'\u2606'}    
+let star = <span style={{ cursor: "pointer"}}  onClick={(e) => handleClick(e)}>
+{'\u2606'}    
 </span>
 
-function ChangeColor() {
-  star.prop={backgroundColor:"black"}
+let stars = R.repeat(star, n)
+
+function handleClick(e) {
+  if (e){
+    stars.map(x => <span style={{ cursor: "pointer"}}>
+    {'\u2605'}    
+    </span> )
+  }
+  return stars
 }
 
-function Repeat() { 
-let starRepeat = R.repeat(star, 3)
-
-return starRepeat
-}
-
-export default Repeat
+export default handleClick
