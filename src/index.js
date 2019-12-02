@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'
+import App from './App'
 import ReactDOM from 'react-dom';
 
-let star = <h1>{'\u2606'}</h1>
-let starRepeat = R.repeat(star, 3)
 
-ReactDOM.render(star, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
